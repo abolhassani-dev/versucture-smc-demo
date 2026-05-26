@@ -26,19 +26,19 @@ Versucture identifies high-probability trading setups using the **Smart Money Co
 
 Full structural mapping with BOS, CHoCH, IDM levels, and Order Blocks across multiple weeks of price action.
 
-![BTC 1H Overview](screenshots/01-overview-btc-1h.png)
+![BTC 1H Overview](01-overview-btc-1h.png)
 
 ### 2. Higher Timeframe Setup — BTC/USDT 5M
 
 Order Block identified on the 5-minute chart, marked as the **H OB** (high-timeframe Order Block) — the zone where price is expected to react.
 
-![BTC 5M Setup](screenshots/02-htf-setup-btc-5m.png)
+![BTC 5M Setup](02-htf-setup-btc-5m.png)
 
 ### 3. Entry Execution — BTC/USDT 1M
 
 After price entered the 5M Order Block, a refined entry was taken on the 1-minute timeframe using the inside Order Block + FVG, with confirmation candle. **Live P&L: 415.4, Risk/Reward: 11.18.**
 
-![BTC 1M Entry](screenshots/03-entry-execution-btc-1m.png)
+![BTC 1M Entry](03-entry-execution-btc-1m.png)
 
 ---
 
