@@ -1,8 +1,8 @@
-# Versucture — SMC Trading Toolkit (Demo)
+# Versucture — SMC Trading Toolkit
 
 > Smart Money Concepts (SMC) trading system with Pine Script indicators and Telegram-based real-time alerts.
 
-This repository contains a **public demonstration** of the Versucture trading toolkit — a complete SMC trading system I designed and built starting in 2020, leading a 3-person development team. The full production version is proprietary, but this demo showcases the core ideas and the indicator's visual output.
+This repository contains a **public demonstration** of the Versucture trading toolkit — a complete SMC trading system I designed and built starting in 2020, leading a 3-person development team. The full production code is proprietary, but the screenshots below show the indicator working on live charts.
 
 ---
 
@@ -11,11 +11,34 @@ This repository contains a **public demonstration** of the Versucture trading to
 Versucture identifies high-probability trading setups using the **Smart Money Concepts (SMC)** methodology:
 
 - **Market Structure** — detects Break of Structure (BOS) and Change of Character (CHoCH)
-- **Order Blocks** — marks institutional supply/demand zones - 4 Diffrent Type of OBs . 
-- **Liquidity Sweeps** — identifies stop-hunt patterns
-- **Point of Interest (POI)** — classifies high-probability entry zones
-- **Entry Confirmations** — multi-timeframe validation logic
-- **Many More Options ** — Custome ZigZag - Fibo Levels For Confirm The High/Lows - Sessions - Reply for Backtesting and many more . 
+- **Order Blocks** — marks institutional supply/demand zones (Normal, SWS, SCOB Pattern, SOB)
+- **Liquidity Sweeps** — identifies stop-hunt patterns and session sweeps (Tokyo, London, NY)
+- **Point of Interest (POI)** — classifies high-probability entry zones (Structural, External, Live)
+- **IDM Detection** — Inducement levels with Transfer Level (TRL) feature
+- **Multi-timeframe validation** — analysis from HTF down to entry timeframe
+- **Fair Value Gap (FVG)** — imbalance detection inside Order Blocks
+
+---
+
+## Live Examples
+
+### 1. Market Structure Overview — BTC/USDT 1H
+
+Full structural mapping with BOS, CHoCH, IDM levels, and Order Blocks across multiple weeks of price action.
+
+![BTC 1H Overview](screenshots/01-overview-btc-1h.png)
+
+### 2. Higher Timeframe Setup — BTC/USDT 5M
+
+Order Block identified on the 5-minute chart, marked as the **H OB** (high-timeframe Order Block) — the zone where price is expected to react.
+
+![BTC 5M Setup](screenshots/02-htf-setup-btc-5m.png)
+
+### 3. Entry Execution — BTC/USDT 1M
+
+After price entered the 5M Order Block, a refined entry was taken on the 1-minute timeframe using the inside Order Block + FVG, with confirmation candle. **Live P&L: 415.4, Risk/Reward: 11.18.**
+
+![BTC 1M Entry](screenshots/03-entry-execution-btc-1m.png)
 
 ---
 
@@ -23,15 +46,11 @@ Versucture identifies high-probability trading setups using the **Smart Money Co
 
 ### 1. Pine Script Indicator (TradingView)
 
-A custom indicator for TradingView that overlays SMC structures directly on price charts. This demo version implements **Order Block detection** as a representative sample of the methodology.
-
-See: `order-block-demo.pine`
+A custom indicator for TradingView that overlays SMC structures directly on price charts. Identifies all structural elements automatically across any symbol or timeframe.
 
 ### 2. Multi-Symbol Telegram Screener
 
 A backend service that monitors multiple symbols across multiple timeframes simultaneously and sends real-time Telegram alerts when price interacts with key POIs.
-
-> **Note:** The screener source is proprietary, but the architecture is shown below.
 
 **Architecture:**
 TradingView Webhook → Alert Router → Symbol/Timeframe Filter
@@ -49,9 +68,9 @@ Time: 14:32 UTC
 
 I authored the complete methodology covering:
 - Market structure rules (BOS, CHoCH definitions)
-- POI classification system
+- POI classification system (Structural, External, Live)
 - Liquidity dynamics
-- Entry confirmation logic
+- Entry confirmation logic (SCOB, FVG, IDM)
 
 ---
 
